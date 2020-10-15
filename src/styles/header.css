@@ -18,11 +18,12 @@ header .navigation{
     min-width: 500px;
 }
 
-header .navigation p{
+header .navigation a{
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
-    border-bottom: 0px;
 }
 
 

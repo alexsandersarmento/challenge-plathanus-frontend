@@ -1,0 +1,8 @@
+.button-component{
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #54d154;
+}

@@ -1,31 +1,54 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import '../styles/header.css';
 
 import logo from '../images/logo.png';
 import searchIcon from '../images/search-icon.png';
 
+import moveScrollTo from '../utilities/moveScrollTo';
+
 function Header() {
+    useEffect(() => {
+        var links = document.querySelectorAll('.nav-option a[href^="#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const element = e.target;
+                const href = element.getAttribute('href');
+                const to = document.querySelector(href).offsetTop;
+
+                moveScrollTo();
+
+                window.scroll({
+                    top: to,
+                    behavior: 'smooth',
+                });
+            });
+        });
+    }, []);
+
     return (
         <header>
             <div className="navigation">
                 <div className="nav-option">
-                    <p>Home</p>
+                    <a href="#home">Home</a>
                     <div className="border selected"></div>
                 </div>
 
                 <div className="nav-option">
-                    <p>What we do?</p>
+                    <a href="#what-we-do">What we do?</a>
                     <div className="border"></div>
                 </div>
 
                 <div className="nav-option">
-                    <p>Testimonial</p>
+                    <a href="" >Testimonial</a>
                     <div className="border"></div>
                 </div>
 
                 <div className="nav-option">
-                    <p>Contact Us</p>
+                    <a href="">Contact Us</a>
                     <div className="border"></div>
                 </div>
             </div>
@@ -43,6 +66,6 @@ function Header() {
             </div>
         </header>
     )
-}
+};
 
 export default Header;
