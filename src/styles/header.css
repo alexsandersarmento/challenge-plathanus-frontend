@@ -1,0 +1,163 @@
+header{
+    display: grid;
+    grid-template-areas: "nav logo search";
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    position: fixed;
+    padding: 10px 30px;
+    font-size: 16pt;
+    color: #fff;
+    transition: background .5s ease-out;
+}
+
+header .navigation{
+    grid-area: "nav";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 500px;
+}
+
+header .navigation p{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 0px;
+}
+
+
+header .navigation .nav-option{
+    height: 30px;
+}
+
+header .navigation .nav-option div{
+    width: 0;
+}
+
+header .navigation .nav-option div.selected{
+    width: 100%;
+    height: 2px;
+    background: #54d154;
+    transition: width .5s;
+}
+
+header .logo{
+    grid-area: "logo";
+    text-align: center;
+}
+
+header .search{
+    grid-area: "search";
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+    text-align: right;
+    min-width: 230px;
+    background: #fff;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+header .search .input-search{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+header .search .button-search{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    margin-right: 10px;
+}
+
+header .search .icon-search{
+  height: 20px;
+}
+
+@media only screen and (max-width: 1300px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header .navigation {
+        min-height: 62px;
+    }
+    
+    header .logo, header .search {
+        display: none;
+    }
+}
+
+/* 
+@media only screen and (max-width: 1300px) {
+   
+    @keyframes slidein {
+        from {
+          margin-right: 100%;
+        }
+      
+        to {
+          margin-right: 0%;
+        }
+    }
+
+    header{
+        display: grid;
+        grid-template-areas: "nav logo ";
+        grid-template-columns: 1fr 2fr;
+    }
+
+    header .search{
+        display: none;
+    }
+
+    header .navigation p{
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        animation-duration: 1.5s;
+        animation-name: slidein;
+    }
+
+    header .navigation{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+        max-height: 100%;
+        background: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    header .navigation p.selected{
+        border-top: 0;
+        margin: 0;
+        border-left: 10px solid #54d154;
+        font-weight: bold;
+    }
+
+    header .menu-hamburger{
+        grid-area: "nav";
+        display: block !important;
+        cursor: pointer;
+    }
+
+    header .menu-hamburger:hover + .navigation{
+        display: flex;
+    }
+
+    header .logo{
+        grid-area: "logo";
+        text-align: center;
+        justify-self: end;
+    }
+  } */
