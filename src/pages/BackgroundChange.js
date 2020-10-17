@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import { FiArrowLeft } from 'react-icons/fi';
 
 import Upload from '../components/Upload';
 import randomId from '../utilities/randomId';
@@ -52,6 +53,10 @@ function BackgroundChange() {
             {redirect && <Redirect to={{ pathname: "/", state: { image: uploadedFiles } }} />}
 
             <div className="container">
+
+                <Link to="/" className="back"><FiArrowLeft /></Link>
+
+
                 <h1>Choose a new background</h1>
                 <div className="box">
                     <Upload onUpload={handleUpload} />
