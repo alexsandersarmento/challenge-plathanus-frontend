@@ -5,7 +5,10 @@
 <hr>
 
 <h1 align="center">:rocket: Desafio Plathanus <h1/>
-	<p>Esse é um projeto do Desafio tecnico para desenvolvedor React/Node da Plathanus</p>
+
+### :memo: Sobre o projeto
+
+<p>Esse é um projeto do Desafio tecnico para desenvolvedor React/Node da Plathanus</p>
 
 ### :art: Layout
 
