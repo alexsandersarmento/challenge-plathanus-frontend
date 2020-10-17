@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: #59D478;
+}
+
+.container h1{
+    font-size: 40pt;
+    color: #fff;
+}
+
+.container h2{
+    color: #fff;
+    font-size: 20pt;
+}
+
+.box{
+    width: 100%;
+    max-width: 400px;
+    margin: 80px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.box .save-new-background{
+    text-align: center;
+    background: #59D4D4;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.box .save-new-background button{
+    outline: none;
+    color: #fff;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 15pt;
+    cursor: pointer;
+}
+
+.preview-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+
+.preview-background .choose-button{
+    color: #fff;
+    font-size: 20pt;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #54d154;
+}
+

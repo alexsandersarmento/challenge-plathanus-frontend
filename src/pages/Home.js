@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiArrowDown } from 'react-icons/fi';
 
 import Header from '../components/Header';
 import Button from '../components/Button';
 
+import backgroundImg from '../images/background.jpg'
+
 import '../styles/home.css';
 
-import moveScrollTo from '../utilities/moveScrollTo';
-
-function Home() {
+function Home(props) {
+    const [background, setBackground] = useState(backgroundImg);
     useEffect(() => {
-        document.querySelector('.scroll-button').addEventListener('click', () => {
-        
-            moveScrollTo()
+        if (props.imageBackground) {
+            setBackground(props.imageBackground.image)
+        }
 
+        document.querySelector('.scroll-button').addEventListener('click', () => {
             window.scroll({
                 top: 900,
                 behavior: 'smooth',
@@ -22,9 +24,10 @@ function Home() {
     }, []);
 
     return (
-        <div id="home">
+        <div id="home" style={{
+            background: `url(${background}) no-repeat center center / cover`,
+        }}>
             <Header />
-
             <div className="section">
                 <div className="work">
                     <h2>Art is Eternal Happiness</h2>
@@ -37,7 +40,7 @@ function Home() {
                     <FiArrowDown />
                 </button>
             </div>
-        </div>
+        </div >
     );
 };
 

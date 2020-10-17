@@ -1,0 +1,40 @@
+ul{
+    margin-top: 20px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #444;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileInfo{
+    display: flex;
+    align-items: center;
+}
+
+.fileInfo div{
+    display: flex;
+    flex-direction: column;
+}
+
+.fileInfo span {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.fileInfo span button{
+    border: 0;
+    background: transparent;
+    color: #e57878;
+    margin-left: 5px;
+    cursor: pointer;
+}

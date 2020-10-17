@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { BsGearFill } from 'react-icons/bs';
 
 import '../styles/header.css';
 
 import logo from '../images/logo.png';
 import searchIcon from '../images/search-icon.png';
 
-import moveScrollTo from '../utilities/moveScrollTo';
-
 function Header() {
+
     useEffect(() => {
         var links = document.querySelectorAll('.nav-option a[href^="#"]');
 
@@ -18,8 +19,6 @@ function Header() {
                 const element = e.target;
                 const href = element.getAttribute('href');
                 const to = document.querySelector(href).offsetTop;
-
-                moveScrollTo();
 
                 window.scroll({
                     top: to,
@@ -33,7 +32,7 @@ function Header() {
         <header>
             <div className="navigation">
                 <div className="nav-option">
-                    <a href="#home">Home</a>
+                    <a href="#home" id="teste">Home</a>
                     <div className="border selected"></div>
                 </div>
 
@@ -64,6 +63,11 @@ function Header() {
                 </button>
 
             </div>
+
+            <Link to="/background-change" className="config">
+                <BsGearFill />
+            </Link>
+
         </header>
     )
 };

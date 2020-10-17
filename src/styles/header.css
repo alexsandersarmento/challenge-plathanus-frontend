@@ -1,7 +1,7 @@
 header{
     display: grid;
-    grid-template-areas: "nav logo search";
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "nav logo search config";
+    grid-template-columns: 1fr 2fr 1fr 80px;
     align-items: center;
     position: fixed;
     padding: 10px 30px;
@@ -79,6 +79,18 @@ header .search .icon-search{
   height: 20px;
 }
 
+header .config{
+    grid-area: 'config';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 25pt;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1300px) {
     header {
         display: flex;
@@ -91,74 +103,8 @@ header .search .icon-search{
         min-height: 62px;
     }
     
-    header .logo, header .search {
+    header .logo, header .search, header .config {
         display: none;
-    }
-}
-
-/* 
-@media only screen and (max-width: 1300px) {
-   
-    @keyframes slidein {
-        from {
-          margin-right: 100%;
-        }
-      
-        to {
-          margin-right: 0%;
-        }
-    }
-
-    header{
-        display: grid;
-        grid-template-areas: "nav logo ";
-        grid-template-columns: 1fr 2fr;
-    }
-
-    header .search{
-        display: none;
-    }
-
-    header .navigation p{
-        width: 100%;
-        height: 100px;
-        padding: 10px;
-        animation-duration: 1.5s;
-        animation-name: slidein;
-    }
-
-    header .navigation{
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        min-width: 100px;
-        max-height: 100%;
-        background: #000;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
     
-    header .navigation p.selected{
-        border-top: 0;
-        margin: 0;
-        border-left: 10px solid #54d154;
-        font-weight: bold;
-    }
-
-    header .menu-hamburger{
-        grid-area: "nav";
-        display: block !important;
-        cursor: pointer;
-    }
-
-    header .menu-hamburger:hover + .navigation{
-        display: flex;
-    }
-
-    header .logo{
-        grid-area: "logo";
-        text-align: center;
-        justify-self: end;
-    }
-  } */
+}

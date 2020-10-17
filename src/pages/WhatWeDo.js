@@ -1,14 +1,24 @@
-import React from 'react';
-
-import '../styles/what-we-do.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Service from '../components/Service';
 
-import service01 from '../images/service-01.jpg';
-import service02 from '../images/service-02.jpg';
-import service03 from '../images/service-03.jpg';
+import '../styles/what-we-do.css';
 
 function WhatWeDo() {
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        async function getServices() {
+            await axios.get('http://localhost:3333/services')
+                .then(res => {
+                    setServices(res.data)
+                });
+        }
+
+        getServices();
+    }, []);
+
     return (
         <div id="what-we-do">
             <div className="title">
@@ -21,9 +31,9 @@ function WhatWeDo() {
             </div>
 
             <div className="services">
-                <Service image={service01} title="Lorem Ipsum" description="Sed in turpis eget sapien pharetra consectetur. Vestibulum sit amet est ipsum. Vivamus non condimentum erat, quis aliquet tellus." />
-                <Service image={service02} title="Lorem Ipsum" description="Sed in turpis eget sapien pharetra consectetur. Vestibulum sit amet est ipsum. Vivamus non condimentum erat, quis aliquet tellus." />
-                <Service image={service03} title="Lorem Ipsum" description="Sed in turpis eget sapien pharetra consectetur. Vestibulum sit amet est ipsum. Vivamus non condimentum erat, quis aliquet tellus." />
+                {services.map(service => {
+                    return <Service image={service.image} title={service.title} description={service.description} />
+                })}
             </div>
         </div>
     )
